@@ -5,9 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Esmanur Bayka'nın web geliştirme portföyü. HTML, CSS, JavaScript ve React ile geliştirilen projeler.">
   <meta name="theme-color" content="#0b101b">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Esmanur Bayka | Web Geliştirme Portföyü">
+  <meta property="og:description" content="Esmanur Bayka'nın web ve React projeleri, geliştirme yaklaşımı ve iletişim bilgileri.">
+  <meta property="og:url" content="https://esmanur-bayka.github.io/webtasarimprojesi.github.io/">
+  <meta name="twitter:card" content="summary">
   <title>Esmanur Bayka | Web Geliştirme Portföyü</title>
   <link rel="icon" href="img/icons8-e-96.png" type="image/png">
+  <link rel="canonical" href="https://esmanur-bayka.github.io/webtasarimprojesi.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Esmanur Bayka","description":"Web Tasarımı ve Kodlama öğrencisi; HTML, CSS, JavaScript ve React öğrenme projeleri.","sameAs":["https://github.com/esmanur-bayka","https://www.linkedin.com/in/lynapgrl/"]}</script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -34,7 +47,7 @@
         <div class="hero-content">
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Kişisel portföy · Web geliştirme</p>
           <h1 id="hero-title">Merhaba, ben <span>Esmanur Bayka.</span></h1>
-          <p class="hero-lead">Sade, erişilebilir ve her ekranda kullanılabilir web deneyimleri geliştirmeyi öğreniyor; fikirleri çalışan projelere dönüştürüyorum.</p>
+          <p class="hero-lead">Sade, erişilebilir ve her ekranda kullanılabilir web deneyimleri geliştiriyorum. HTML, CSS ve JavaScript temelimi React projeleriyle derinleştiriyorum.</p>
           <div class="actions">
             <a class="button primary" href="#projects">Projelerimi incele <span aria-hidden="true">↗</span></a>
             <a class="button secondary" href="#contact">İletişime geç</a>
@@ -88,6 +101,14 @@
               <h3>FocusBoard</h3>
               <p>Görev ekleme ve düzenleme, durum takibi, filtreleme ve tarayıcıda yerel kayıt. React bileşenleri ve otomatik testlerle geliştirilen öğrenme uygulaması.</p>
               <ul class="chips" aria-label="Kullanılan teknolojiler"><li>React</li><li>JavaScript</li><li>Vite</li><li>Vitest</li></ul>
+              <dl class="project-highlights">
+                <div><dt>Öne çıkanlar</dt><dd>Görev yönetimi, geri alma ve Türkçe karakter destekli arama</dd></div>
+                <div><dt>Kalite yaklaşımı</dt><dd>Vitest ve Testing Library ile 15 otomatik test</dd></div>
+              </dl>
+              <details class="project-details"><summary>Projenin teknik ayrıntıları</summary>
+                <p>Görevler tarayıcının localStorage alanında tutuluyor. Bozuk kayıt durumlarında kullanıcıya açıklayıcı hata gösteriliyor. Sunucu ve çoklu cihaz senkronizasyonu yok. Yapay zekâ desteğiyle geliştirilmiş bir öğrenme çalışmasıdır.</p>
+                <a class="inline-link" href="https://github.com/esmanur-bayka/focusboard/blob/main/docs/testing.md" target="_blank" rel="noopener noreferrer">Test notlarını incele <span aria-hidden="true">↗</span></a>
+              </details>
               <a class="inline-link" href="https://github.com/esmanur-bayka/focusboard" target="_blank" rel="noopener noreferrer">Kaynak kodu incele <span aria-hidden="true">↗</span></a>
             </div>
           </article>
@@ -102,6 +123,13 @@
               <h3>Kişisel portföy</h3>
               <p>Semantik HTML, responsive CSS, klavyeyle kullanılabilen mobil menü ve gerçek proje bağlantılarıyla hazırlanmış bu web sitesi.</p>
               <ul class="chips" aria-label="Kullanılan teknolojiler"><li>HTML5</li><li>CSS3</li><li>Vanilla JS</li><li>Erişilebilirlik</li></ul>
+              <dl class="project-highlights">
+                <div><dt>Odak</dt><dd>Mobil menü, semantik HTML ve görünür klavye odağı</dd></div>
+                <div><dt>Doğrulama</dt><dd>Kaynak kod ve farklı ekran genişliklerinde tarayıcı testleri</dd></div>
+              </dl>
+              <details class="project-details"><summary>Bu sitede neleri iyileştirdim?</summary>
+                <p>Mobil menü Escape ile kapanıyor, bağlantılar gerçek projelere yönlendiriyor. İletişim alanı, mesajı göndermek yerine WhatsApp taslağı hazırladığını açıkça belirtiyor.</p>
+              </details>
               <a class="inline-link" href="https://github.com/esmanur-bayka/webtasarimprojesi.github.io" target="_blank" rel="noopener noreferrer">Kaynak kodu incele <span aria-hidden="true">↗</span></a>
             </div>
           </article>
@@ -120,10 +148,21 @@
       </div>
     </section>
 
+    <section class="section approach-section" id="approach" aria-labelledby="approach-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">04 / Çalışma yaklaşımım</p><h2 id="approach-title">Tasarla. Geliştir. Doğrula.</h2></div>
+          <p>Bir arayüzü değerlendirirken yalnızca görünüşüne değil, kullanımına ve kodun anlaşılır olmasına da bakıyorum.</p></div>
+        <ol class="approach-grid">
+          <li><span class="approach-number">01</span><h3>İhtiyacı anla</h3><p>İçeriği, kullanıcı hedefini ve ekran boyutlarını netleştir.</p></li>
+          <li><span class="approach-number">02</span><h3>Basitçe geliştir</h3><p>Semantik yapı, esnek yerleşim ve anlaşılır etkileşimler kur.</p></li>
+          <li><span class="approach-number">03</span><h3>Kontrol et</h3><p>Klavye erişimini, farklı ekranları ve hata durumlarını test et.</p></li>
+        </ol>
+      </div>
+    </section>
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="container contact-grid">
         <div>
-          <p class="eyebrow">04 / İletişim</p>
+          <p class="eyebrow">05 / İletişim</p>
           <h2 id="contact-title">Bir fikriniz mi var?</h2>
           <p class="contact-intro">Benimle GitHub veya LinkedIn üzerinden bağlantı kurabilir, aşağıdaki alanları doldurup WhatsApp'ta mesaj taslağı oluşturabilirsiniz.</p>
           <div class="contact-links">
@@ -133,6 +172,7 @@
         </div>
         <form class="contact-form" id="contact-form">
           <p class="form-note">Bu form bir sunucuya veri göndermez. Son adımda mesajınız WhatsApp'ta açılır; göndermek sizin onayınıza bağlıdır.</p>
+          <noscript><p class="form-warning">Bu form için JavaScript gerekir. Alternatif olarak GitHub veya LinkedIn bağlantısını kullanabilirsiniz.</p></noscript>
           <label for="contact-name">Adınız <span class="required">(zorunlu)</span></label>
           <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required placeholder="Adınız">
           <label for="contact-email">E-posta adresiniz <span class="optional">(isteğe bağlı)</span></label>

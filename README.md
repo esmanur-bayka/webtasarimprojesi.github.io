@@ -41,3 +41,20 @@ HTML5 · CSS3 · JavaScript · GitHub Actions
 Esmanur Bayka — Atatürk Üniversitesi, Web Tasarımı ve Kodlama.
 
 [GitHub](https://github.com/esmanur-bayka) · [LinkedIn](https://www.linkedin.com/in/lynapgrl/)
+
+## Tek kişisel portföy
+
+Resmî portföy için bu tek depoyu kullan: https://esmanur-bayka.github.io/webtasarimprojesi.github.io/
+
+Diğer portföy denemeleri ayrı yayınlar olarak kullanılmamalıdır. `focusboard` bir portföy sitesi değil, React görev yönetimi projesidir. Bu sitede gerçek ve belgelenmiş çalışmalar yer alır.
+
+## Tarayıcı testleri
+
+```sh
+npm install
+npx playwright install chromium
+npm test
+npm run test:e2e
+```
+
+Playwright testleri 375, 768 ve 1280 px genişliklerde taşmayı; mobil menüde klavye kullanımı, gerçek bağlantılar ve iletişim doğrulamasını kontrol eder. CI sonucu gerçek çalıştırmadan sonra değerlendirilmelidir.

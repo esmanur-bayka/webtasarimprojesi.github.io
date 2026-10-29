@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+/* Fontlar HTML'de preconnect ile yüklenir; bağlantı yoksa sistem fontuna geçilir. */
 :root{color-scheme:dark;--bg:#0b101b;--panel:#121c2b;--panel2:#162238;--text:#eff4fc;--muted:#b5c2d6;--accent:#8ae8cf;--border:#2a3b51;--max:1160px}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:6.5rem}
@@ -120,3 +120,23 @@ h3{font-size:1.35rem}
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+/* Project evidence, disclosure and learning process */
+.project-highlights{display:grid;gap:.8rem;margin:1.4rem 0 1rem;padding:1.1rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.project-highlights div{display:grid;grid-template-columns:minmax(100px,.4fr) minmax(0,1fr);gap:1rem}
+.project-highlights dt{font-size:.78rem;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.project-highlights dd{margin:0;color:var(--muted);font-size:.85rem;line-height:1.5}
+.project-details{margin:1.1rem 0;border:1px solid #51647a;border-radius:.65rem;padding:.85rem 1rem}
+.project-details summary{cursor:pointer;color:var(--text);font-weight:700;min-height:28px}
+.project-details[open] summary{margin-bottom:.85rem}
+.project-details p{color:var(--muted);font-size:.91rem;line-height:1.65}
+.project-details .inline-link{font-size:.88rem}
+.approach-section{padding-top:clamp(3.5rem,7vw,5.5rem)}
+.approach-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;list-style:none;padding:0;margin:2rem 0 0}
+.approach-grid li{border:1px solid var(--border);background:linear-gradient(155deg,#182438,#101927);border-radius:1rem;padding:1.65rem;min-width:0}
+.approach-number{display:inline-flex;align-items:center;justify-content:center;width:2.65rem;height:2.65rem;border:1px solid #56776f;border-radius:.65rem;color:var(--accent);font:800 .85rem Manrope,system-ui,sans-serif}
+.approach-grid h3{margin:1.5rem 0 .6rem}
+.approach-grid p{color:var(--muted);font-size:.96rem;margin:0}
+.form-warning{padding:.8rem 1rem;border:1px solid #ad8054;border-radius:.65rem;color:#ffe0a4}
+@media(max-width:840px){.approach-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.project-highlights div{grid-template-columns:minmax(0,1fr);gap:.25rem}.project-details{padding:.75rem .8rem}}
