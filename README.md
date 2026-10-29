@@ -1,59 +1,43 @@
-# Esmanur Bayka · Kişisel Portfolyo
+# Esmanur Bayka · Kişisel Portföy
 
-HTML, CSS ve JavaScript ile hazırlanmış, farklı ekran boyutlarına uyum sağlayan kişisel portfolyo çalışması.
+HTML5, CSS3 ve vanilla JavaScript ile hazırlanmış kişisel web portföyü. **Bu repo bir öğrenme projesidir**; doğrulanmamış müşteri yorumları ve örnek hizmet iddiaları yerine gerçek GitHub çalışmalarına bağlantı verir.
 
-## Proje hakkında
+## Projeyi çalıştırma
+1. Repoyu klonlayın veya indirin.
+2. `index.html` dosyasını tarayıcıda açın; isterseniz VS Code Live Server kullanın.
+3. Google Fonts için internet bağlantısı faydalıdır; bağlantı olmadan sistem yazı tipine geçer. Derleme veya backend gerekmez.
 
-Bu çalışma; sayfa düzeni, responsive tasarım, CSS animasyonları ve JavaScript ile mobil menü etkileşimi pratiği için geliştirildi. React veya yerel mobil uygulama içermez.
+## Dosyalar
+- `index.html`: Semantik bölümler, proje bağlantıları ve etiketli iletişim alanları.
+- `style.css`: Mobil öncelikli düzen, görünür klavye odağı, azaltılmış hareket tercihi.
+- `script.js`: Mobil menü, Escape ile kapatma ve WhatsApp mesaj taslağı.
+- `img/`: Favicon ve önceki çalışmadan kalan görseller.
+- `tests/smoke.test.mjs`: Node.js yerleşik test çalıştırıcısıyla kaynak denetimleri.
+- `.github/workflows/quality.yml`: GitHub Actions temel denetimi.
 
-## Teknolojiler
+## Gerçek projeler
+- [FocusBoard](https://github.com/esmanur-bayka/focusboard): React ile görev yönetimi ve otomatik test çalışması.
+- Bu portföy: Responsive HTML/CSS ve erişilebilir JavaScript gezinme.
 
-- HTML5: sayfa yapısı ve içerik bölümleri
-- CSS3: Flexbox, Grid, media queries ve animasyonlar
-- JavaScript: mobil gezinme menüsü
-- Boxicons: ikonlar
+## İletişim ve CV sınırı
+İletişim formu **mesajı bir sunucuya göndermez**. Girilen bilgiler WhatsApp'ta önceden doldurulmuş bir mesaj taslağına aktarılır. Kullanıcı, WhatsApp üzerinden **Gönder** demeden mesaj iletilmez. Formun çalışması WhatsApp erişimine bağlıdır. Kayıtlı veriler bu sitede depolanmaz.
 
-## Yerel çalıştırma
+Doğrulanmış bir özgeçmiş PDF dosyası bulunmadığından çalışmayan CV bağlantısı kaldırılmıştır. PDF hazır olduğunda belgeyi repoya ekleyip yeni bağlantı açın.
 
-1. Depoyu indirin veya klonlayın:
-   `git clone https://github.com/lynpgrl/webtasarimprojesi.github.io.git`
-2. Proje klasöründeki `index.html` dosyasını tarayıcıda açın.
-3. Alternatif olarak VS Code Live Server ile çalıştırın.
+## Test / kalite
+`node --test tests/*.test.mjs` komutu kaynak odaklı duman testlerini çalıştırır. Bu testler gerçek tarayıcı veya cihaz testi yerine geçmez.
 
-Derleme ya da paket kurulumu gerekmez. Harici yazı tipi ve ikonlar için internet bağlantısı gerekir.
+**Gerçek cihazda manuel kontrol (henüz doğrulanmış test sonucu değildir):**
+- 375 px, 768 px ve 1280 px: yatay taşma, başlıkların okunabilirliği, proje kartları ve iletişim alanı.
+- Dar ekranda menü: Tab/Enter/Space/Escape, bağlantıya tıklayınca kapanma ve `aria-expanded`.
+- Klavye odağı: Bütün bağlantıların ve form girişlerinin görünür odağı.
+- Ekran okuyucu: Bölüm başlıkları, menü ve form etiketleri.
+- WhatsApp akışı: Eksik alan kontrolü, kullanıcı onayından önce otomatik gönderim olmaması.
+- Harici bağlantılar, gizlilik ve bağlantı hedeflerinin son kontrolü.
 
-## Dosya yapısı
+## Teknolojiler ve geliştirici
+HTML5 · CSS3 · JavaScript · GitHub Actions
 
-| Dosya | Görevi |
-| --- | --- |
-| `index.html` | Portfolyo bölümleri ve içerik |
-| `style.css` | Görsel tasarım ve ekran boyutuna göre düzen |
-| `script.js` | Mobil menü açma ve kapatma |
-| `img/` | Görsel dosyalar |
+Esmanur Bayka — Atatürk Üniversitesi, Web Tasarımı ve Kodlama.
 
-## Mevcut sınırlar
-
-- İletişim formunun sunucu bağlantısı yoktur; mesaj göndermez.
-- CV düğmesi ve bazı sosyal bağlantılar henüz tamamlanmamıştır.
-- Sayfadaki hizmet ve referans metinleri, doğrulanmış müşteri deneyimi olarak değerlendirilmemelidir.
-- Otomatik test ve mağaza yayını bulunmaz.
-
-## Geliştirme hedefleri
-
-- Örnek hizmet/referans alanlarını gerçek proje anlatımlarıyla değiştirmek
-- Klavye erişimi, odak görünürlüğü ve görsel alternatif metinlerini iyileştirmek
-- Mobil görünümü farklı ekranlarda kontrol etmek
-- React ile bileşen tabanlı bir sürüm geliştirmek
-
-## Manuel kontrol önerileri
-
-- 375 px, 768 px ve masaüstü genişliklerinde taşma kontrolü
-- Mobil menünün açılması, bağlantı seçildiğinde kapanması
-- Bölüm bağlantılarının doğru alana gitmesi
-- Klavye ile gezinme ve odak görünürlüğü
-
-Bu liste test planıdır; tamamlanmış test raporu değildir.
-
-## Geliştirici
-
-[Esmanur Bayka](https://github.com/lynpgrl) · Atatürk Üniversitesi, Web Tasarımı ve Kodlama, 2. sınıf
+[GitHub](https://github.com/esmanur-bayka) · [LinkedIn](https://www.linkedin.com/in/lynapgrl/)
