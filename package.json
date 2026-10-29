@@ -1,0 +1,14 @@
+{
+  "name": "esmanur-bayka-portfolio",
+  "private": true,
+  "version": "1.1.0",
+  "description": "Accessible single personal portfolio",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
+    "test:all": "npm test && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
+}

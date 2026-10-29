@@ -27,6 +27,12 @@ if (menuButton && navbar) {
   document.addEventListener("click", event => {
     if (!navbar.contains(event.target) && !menuButton.contains(event.target)) setMenuOpen(false);
   });
+  document.addEventListener("focusin", event => {
+    if (menuButton.getAttribute("aria-expanded") === "true" &&
+        !navbar.contains(event.target) && !menuButton.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  });
   window.addEventListener("resize", () => {
     if (window.innerWidth > 840) setMenuOpen(false);
   });
