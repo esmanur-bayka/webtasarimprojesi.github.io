@@ -212,23 +212,23 @@ section {
 @keyframes words {
   0%,
   20% {
-    content: "Front-end Developer'ım";
+    content: "Web öğrencisiyim";
   }
   21%,
   40% {
-    content: "Back-end Developer'ım";
+    content: "Kodlamayı öğreniyorum";
   }
   41%,
   60% {
-    content: "Software Developer'ım";
+    content: "Arayüz geliştiriyorum";
   }
   61%,
   80% {
-    content: "Full Stack Developer'ım";
+    content: "React öğreniyorum";
   }
   81%,
   100% {
-    content: "Software Tester'ım";
+    content: "Üreterek öğreniyorum";
   }
 }
 @keyframes typing {
@@ -760,3 +760,15 @@ input[type="number"] {
   }
 }
 /* MEDYA QUERİES END*/
+
+/* Link and accessibility repairs; original palette, layout and images retained. */
+#menu-icon{background:transparent;border:0;min-width:44px;min-height:44px}
+:where(a,button,input,textarea):focus-visible{outline:3px solid #ff7777;outline-offset:5px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.section-note{font-size:1.7rem;line-height:1.7;max-width:75rem;margin:0 auto 3rem;text-align:center}
+.section-note a{color:#ff9999;text-decoration:underline}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem}
+.project-card{border:2px solid var(--main-color);border-radius:2rem;padding:3rem;background:var(--second-bg-color)}
+.project-card h3{font-size:2.8rem;margin-bottom:2rem}.project-card p{font-size:1.7rem;line-height:1.7;margin-bottom:2rem}
+@media(max-width:896px){.project-grid{grid-template-columns:1fr}.home-content h1,.home-content h3,.home-content p,.social-icons,.btn-group{top:auto}.home-content h1{padding-top:0}.home-content h3{margin-block:2rem}.home{gap:4rem}.navbar{max-height:80dvh;overflow:auto}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.text-animation span::before{content:'Web Tasarımı ve Kodlama öğrencisiyim'}.text-animation span::after{display:none}}
