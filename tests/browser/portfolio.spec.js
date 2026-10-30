@@ -12,7 +12,8 @@ for (const width of [375, 768, 1280]) {
 test("Mobile menu supports keyboard, Escape and link closing", async ({page}) => {
   await page.setViewportSize({width:375,height:812});
   await page.goto("/");
-  const menu=page.getByRole("button",{name:"Menüyü aç"});
+  const menu=page.locator("#menu-icon");
+  await expect(menu).toHaveAccessibleName("Menüyü aç");
   await menu.focus();
   await page.keyboard.press("Enter");
   await expect(menu).toHaveAttribute("aria-expanded","true");
