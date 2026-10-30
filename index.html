@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Esmanur Portfolio</title>
+    <title>Esmanur Bayka | Web Geliştirme Portfolyosu</title>
+    <meta name="description" content="Esmanur Bayka, Web Tasarımı ve Kodlama 2. sınıf öğrencisi. Web projeleri, React öğrenme çalışmaları ve iletişim.">
     <link rel="shortcut icon" href="img/icons8-e-96.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link
@@ -15,12 +16,12 @@
     <!-- HEADER START -->
     <header class="header">
       <a href="#home" class="logo">Esmanur <span>Bayka</span></a>
-      <i class="bx bx-menu" style="color: #ff0400" id="menu-icon"></i>
+      <button class="bx bx-menu" id="menu-icon" type="button" aria-label="Menüyü aç" aria-controls="navbar" aria-expanded="false"></button>
       <nav class="navbar" id="navbar">
         <a href="#home" class="active">Anasayfa</a>
         <a href="#education">Benim Yolculuğum</a>
-        <a href="#services">Hizmetler</a>
-        <a href="#flashbacks">Referanslar</a>
+        <a href="#projects">Projeler</a>
+        <a href="#flashbacks">Tasarım örnekleri</a>
         <a href="#contact">İletişim</a>
       </nav>
     </header>
@@ -30,29 +31,22 @@
       <div class="home-content">
         <h1>Merhaba, ben Esmanur</h1>
         <h3 class="text-animation">Ben <span></span></h3>
-        <p>
-          Teknolojiye olan tutkumla, fikirleri satırlara döküp onları hayata
-          geçiriyorum. Modern web teknolojileriyle sade, hızlı ve kullanıcı
-          odaklı projeler geliştiriyor; her kod satırında estetik ve işlevi bir
-          araya getiriyorum. Front-end’den Back-end’e, yazılım testinden Full
-          Stack geliştirmeye kadar dijital dünyanın her alanında çözüm üreten,
-          öğrenmeye ve üretmeye her zaman açık bir geliştiriciyim.
-        </p>
+        <p>Atatürk Üniversitesi Web Tasarımı ve Kodlama 2. sınıf öğrencisiyim. HTML, CSS ve JavaScript ile arayüzler geliştiriyor, React öğrenme projeleri üzerinde çalışıyorum. Web ve mobil geliştirme alanında deneyim kazanmak istiyorum.</p>
         <div class="social-icons">
           <a
             href="https://www.instagram.com/lynapgrl?igsh=emNrMDAyZDlqNWJ2&utm_source=qr"
-            target="_blank"
-            ><i class="bx bxl-instagram" undefined></i
+            target="_blank" rel="noopener noreferrer" aria-label="Instagram profilim"
+            ><i class="bx bxl-instagram"></i
           ></a>
-          <a href="https://wa.me/+905467710162" target="_blank"
+          <a href="https://wa.me/+905467710162" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişim"
             ><i class="bx bxl-whatsapp"></i
           ></a>
-          <a href="#"><i class="bx bxl-reddit"></i></a>
-          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="https://github.com/esmanur-bayka" aria-label="GitHub profilim"><i class="bx bxl-github" aria-hidden="true"></i></a>
+          <a href="mailto:esmabayka374@gmail.com" aria-label="E-posta gönder"><i class="bx bx-envelope" aria-hidden="true"></i></a>
         </div>
         <div class="btn-group">
-          <a href="#" class="btn">CV</a>
-          <a href="#" class="btn">Bana Ulaş</a>
+          <a href="cv.html" class="btn">CV'mi incele</a>
+          <a href="#contact" class="btn">Bana Ulaş</a>
         </div>
       </div>
       <div class="home-img">
@@ -124,50 +118,26 @@
     <!-- /* EDUCATİON END */ -->
     <!-- SERVİCES START -->
     <section class="services" id="services">
-      <h2 class="heading">Hizmetler</h2>
+      <h2 class="heading">Çalışma <span>Alanlarım</span></h2>
       <div class="services-container">
         <div class="service-box">
           <div class="service-info">
-            <h4>Front-end Developement</h4>
-            <p>
-              Modern, kullanıcı dostu ve estetik arayüzler tasarlayarak web
-              sitelerinin en görünür kısmını oluşturuyorum. HTML, CSS ve
-              JavaScript gibi teknolojilerle fikirleri etkileşimli ve dinamik
-              web deneyimlerine dönüştürmeyi hedefliyorum.
-            </p>
+            <h4>Web arayüzleri</h4><p>HTML, CSS ve JavaScript ile responsive sayfalar geliştiriyorum. Tasarımı farklı ekranlarda kullanılabilir hâle getirmeye odaklanıyorum.</p>
           </div>
         </div>
         <div class="service-box">
           <div class="service-info">
-            <h4>Back-end Developement</h4>
-            <p>
-              Web sitelerinin ve uygulamaların görünmeyen kısmında, güçlü ve
-              güvenli bir altyapı oluşturuyorum. Veritabanı yönetimi, sunucu
-              işlemleri ve API entegrasyonlarıyla projelerin sorunsuz ve hızlı
-              çalışmasını sağlıyorum.
-            </p>
+            <h4>Veri ve sunucu temelleri</h4><p>PHP ve SQL temellerini öğreniyorum. Veri saklama ve sunucu tarafı geliştirme konularında alıştırmalar yapıyorum.</p>
           </div>
         </div>
         <div class="service-box">
           <div class="service-info">
-            <h4>Full Stack Developement</h4>
-            <p>
-              Hem ön yüz (front-end) hem de arka yüz (back-end) geliştirme
-              süreçlerini yöneterek projeleri baştan sona inşa ediyorum.
-              Kullanıcı deneyimi ile güçlü altyapıyı bir araya getirerek, modern
-              ve ölçeklenebilir web çözümleri üretiyorum.
-            </p>
+            <h4>React öğrenme çalışmaları</h4><p>FocusBoard üzerinde bileşenler, state yönetimi ve otomatik testlerle çalışıyorum. Öğrendiklerimi küçük uygulamalarla pekiştiriyorum.</p>
           </div>
         </div>
         <div class="service-box">
           <div class="service-info">
-            <h4>Mobile Developement</h4>
-            <p>
-              Farklı platformlarda (iOS ve Android) sorunsuz çalışan, modern ve
-              kullanıcı dostu mobil uygulamalar geliştiriyorum. Hız, performans
-              ve tasarım dengesini koruyarak mobil deneyimi en üst seviyeye
-              taşımayı hedefliyorum.
-            </p>
+            <h4>Mobil geliştirme hedefim</h4><p>Mobil arayüzlere ilgi duyuyorum. Responsive web deneyimimin üzerine React Native ve Expo öğrenmeyi hedefliyorum; yayımlanmış bir mobil uygulamam bulunmuyor.</p>
           </div>
         </div>
       </div>
@@ -176,7 +146,7 @@
     <!-- FLASHBACKS START -->
     <section class="flashbacks" id="flashbacks">
       <div class="flashback-box">
-        <h2 class="heading">Referanslar</h2>
+        <h2 class="heading">Tasarım örnekleri</h2><p class="section-note">Aşağıdaki kartlar özgün tasarımdaki örnek içeriklerdir; doğrulanmış müşteri referansları değildir.</p>
         <div class="wrapper">
           <div class="flashback-item">
             <img src="img/image copy.png" alt="" />
@@ -231,22 +201,30 @@
     </section>
     <!-- FLASHBACKS END-->
     <!-- CONTACT START -->
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <h2 class="heading" id="projects-title">Seçilmiş <span>Projeler</span></h2>
+      <div class="project-grid">
+        <article class="project-card"><h3>FocusBoard</h3><p>React öğrenme projesi. Görev oluşturma, düzenleme, filtreleme, yerel kayıt ve silmeyi geri alma. AI desteğiyle geliştirildi.</p><p>React · Vite · Vitest</p><a class="btn" href="https://github.com/esmanur-bayka/focusboard">Kaynak kod</a></article>
+        <article class="project-card"><h3>Kişisel portfolyo</h3><p>Kendi siyah-kırmızı tasarımım üzerine kurduğum HTML, CSS ve JavaScript sitesi. Yolculuğumu ve çalışmalarımı bir araya getiriyor.</p><p>HTML · CSS · JavaScript</p><a class="btn" href="https://github.com/esmanur-bayka/webtasarimprojesi.github.io">Kaynak kod</a></article>
+      </div>
+    </section>
     <section class="contact" id="contact">
       <h2 class="heading">Bana <span>Ulaş</span></h2>
-      <form action="#">
+      <p class="section-note" id="contact-help">Bu form mesajı e-posta uygulamanda hazırlar; gönderme işlemini sen tamamlarsın. <a href="mailto:esmabayka374@gmail.com">Doğrudan e-posta gönder</a>.</p>
+      <form id="contact-form" aria-describedby="contact-help">
         <div class="input-group">
           <div class="input-box">
-            <input type="text" placeholder="Adınız" required />
-            <input type="email" placeholder="E-posta" />
+            <label class="sr-only" for="contact-name">Adınız (zorunlu)</label><input id="contact-name" name="name" type="text" placeholder="Adınız" autocomplete="name" required maxlength="100" />
+            <label class="sr-only" for="contact-email">E-posta (isteğe bağlı)</label><input id="contact-email" name="email" type="email" placeholder="E-posta" autocomplete="email" />
           </div>
           <div class="input-box">
-            <input type="number" placeholder="Telefon Numaranız" required />
-            <input type="text" placeholder="Konu" />
+            <label class="sr-only" for="contact-phone">Telefon (isteğe bağlı)</label><input id="contact-phone" name="phone" type="tel" placeholder="Telefon (isteğe bağlı)" autocomplete="tel" />
+            <label class="sr-only" for="contact-topic">Konu</label><input id="contact-topic" name="topic" type="text" placeholder="Konu" maxlength="150" />
           </div>
         </div>
         <div class="input-group-2">
-          <textarea placeholder="Mesajınız" cols="30" rows="10"></textarea>
-          <input type="submit" value="Mesaj Gönder" class="btn" />
+          <label class="sr-only" for="contact-message">Mesajınız (zorunlu)</label><textarea id="contact-message" name="message" placeholder="Mesajınız" cols="30" rows="10" required maxlength="3000"></textarea>
+          <input type="submit" value="E-postayı hazırla" class="btn" />
         </div>
       </form>
     </section>
@@ -256,21 +234,21 @@
       <div class="social">
         <a
           href="https://www.instagram.com/lynapgrl?igsh=emNrMDAyZDlqNWJ2&utm_source=qr"
-          target="_blank"
-          ><i class="bx bxl-instagram" undefined></i
+          target="_blank" rel="noopener noreferrer"
+          ><i class="bx bxl-instagram"></i
         ></a>
-        <a href="https://wa.me/+905467710162" target="_blank"
+        <a href="https://wa.me/+905467710162" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişim"
           ><i class="bx bxl-whatsapp"></i
         ></a>
-        <a href="#"><i class="bx bxl-reddit"></i></a>
-        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="https://github.com/esmanur-bayka" aria-label="GitHub profilim"><i class="bx bxl-github" aria-hidden="true"></i></a>
+        <a href="mailto:esmabayka374@gmail.com" aria-label="E-posta gönder"><i class="bx bx-envelope" aria-hidden="true"></i></a>
       </div>
       <ul class="list">
         <li>
           <a href="#home">Ana sayfa</a>
           <a href="#education">Eğitim</a>
-          <a href="#services">Hizmetler</a>
-          <a href="#flashbacks">Referanslar</a>
+          <a href="#projects">Projeler</a>
+          <a href="#flashbacks">Tasarım örnekleri</a>
         </li>
       </ul>
       <p class="copyright">
