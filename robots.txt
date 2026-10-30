@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://esmanur-bayka.github.io/webtasarimprojesi.github.io/sitemap.xml
