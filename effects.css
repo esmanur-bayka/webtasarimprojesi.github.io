@@ -1,0 +1,24 @@
+/* Decorative depth layer. Content, palette and section order remain unchanged. */
+.home{position:relative;isolation:isolate;overflow:clip}
+.depth-scene{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:.65}
+.home-img{position:relative;isolation:isolate;perspective:1200px;flex-shrink:0}
+.home-img::before,.home-img::after{content:"";position:absolute;inset:-9%;border:1px solid var(--main-color);border-radius:50%;pointer-events:none;z-index:-1;opacity:.65;box-shadow:0 0 18px color-mix(in srgb,var(--main-color) 28%,transparent)}
+.home-img::before{transform:rotateX(67deg) rotateZ(-24deg);animation:orbit-a 19s linear infinite}
+.home-img::after{inset:-15%;transform:rotateY(67deg) rotateZ(28deg);animation:orbit-b 25s linear infinite}
+.home-img img{position:relative;z-index:1;backface-visibility:hidden}
+.depth-card{--rx:0deg;--ry:0deg;--lift:0px;--base-scale:1;transform-style:preserve-3d;transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--lift)) scale(var(--base-scale));transition:transform .45s cubic-bezier(.2,.75,.2,1),box-shadow .35s ease;position:relative;isolation:isolate}
+.depth-card.depth-active{--lift:-6px;transition:transform .12s ease-out,box-shadow .3s ease;will-change:transform;box-shadow:0 20px 45px #0008,0 0 28px color-mix(in srgb,var(--main-color) 24%,transparent)}
+.flashback-item.depth-card:nth-child(2){--base-scale:1.1}
+.depth-card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),#ffffff18,transparent 55%);transition:opacity .3s;transform:translateZ(1px)}
+.depth-card.depth-active::after{opacity:1}
+.depth-card :is(h2,h3,h4){transform:translateZ(24px)}
+.depth-card .btn,.depth-card>img{transform:translateZ(35px)}
+.timeline-content.depth-card{transform-origin:center}
+.btn{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,color .25s ease}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px color-mix(in srgb,var(--main-color) 35%,transparent)}
+.btn:active{transform:translateY(0) scale(.98)}
+@keyframes orbit-a{from{transform:rotateX(67deg) rotateZ(-24deg)}to{transform:rotateX(67deg) rotateZ(336deg)}}
+@keyframes orbit-b{from{transform:rotateY(67deg) rotateZ(28deg)}to{transform:rotateY(67deg) rotateZ(-332deg)}}
+@media(hover:none),(pointer:coarse){.depth-scene{opacity:.3}.depth-card{transform:none}.flashback-item.depth-card:nth-child(2){transform:scale(1.1)}.home-img::before,.home-img::after{animation:none}.depth-card :is(h2,h3,h4),.depth-card .btn,.depth-card>img{transform:none}}
+@media(max-width:575px){.home-img::before{inset:-5%}.home-img::after{inset:-9%}}
+@media(prefers-reduced-motion:reduce){.depth-scene{display:none}.home-img::before,.home-img::after{animation:none}.depth-card,.depth-card.depth-active{transform:none;transition:none}.flashback-item.depth-card:nth-child(2){transform:scale(1.1)}.depth-card :is(h2,h3,h4),.depth-card .btn,.depth-card>img{transform:none}.btn:hover,.btn:active{transform:none}}
