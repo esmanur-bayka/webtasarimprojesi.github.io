@@ -6,7 +6,7 @@
   box-sizing: border-box;
   text-decoration: none;
   border: none;
-  outline: none;
+
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
 }
@@ -760,3 +760,85 @@ input[type="number"] {
   }
 }
 /* MEDYA QUERİES END*/
+
+/* Yayın öncesi erişilebilirlik ve responsive: özgün siyah/kırmızı tasarım korunur */
+html { scroll-padding-top: 9rem; }
+body { overflow-wrap: break-word; }
+img { max-width: 100%; height: auto; }
+main, section, .home-content, .services-container, .wrapper, .contact-form { min-width: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible {
+  outline: 3px solid white; outline-offset: 4px;
+}
+.skip-link { position: fixed; top: -9rem; left: 1rem; padding: 1.2rem 2rem;
+  z-index: 100; background: white; color: black; border-radius: .7rem; font-size: 1.7rem; }
+.skip-link:focus { top: 1rem; }
+.menu-toggle { display: none; background: transparent; color: #ff4040; font: inherit; border: 0;
+  min-width: 44px; min-height: 44px; cursor: pointer; align-items: center; justify-content: center; }
+.menu-toggle i { font-size: 3.6rem; }
+.home { gap: clamp(2rem,6vw,9rem); }
+.home-content { flex: 1 1 500px; }
+.home-img { flex: 0 1 320px; }
+.home-img img { max-width: 100%; }
+.text-animation { min-width: 0; }
+.text-animation span::before, .text-animation span::after { content: none !important; animation: none !important; }
+.section-intro { max-width: 800px; margin: 0 auto 3rem; padding: 0 2rem; text-align: center;
+  font-size: 1.75rem; line-height: 1.7; color: #f0dada; }
+.services-container { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.service-box { height: auto; min-height: 260px; cursor: default; }
+.service-box .service-info { max-height: none; padding: 3rem; }
+.service-info h3 { font-size: 2.6rem; line-height: 1.3; margin-bottom: 1.6rem; }
+.service-info p { max-height: none; margin: 0; line-height: 1.65; font-weight: 400; }
+.wrapper { width: min(100%, 1050px); grid-template-columns: repeat(2,minmax(0,1fr)); }
+.flashback-item { min-width: 0; max-width: none; min-height: 320px; padding: 3rem;
+  align-items: flex-start; text-align: left; cursor: default; }
+.flashback-item:nth-child(2) { transform: none; animation: none; }
+.flashback-item h3 { font-size: 3.2rem; line-height: 1.25; }
+.flashback-item p { font-size: 1.7rem; line-height: 1.7; }
+.project-tag { color: #ff9999; font-size: 1.3rem !important; letter-spacing: .08em; }
+.project-secondary-link { color: white; text-decoration: underline; font-size: 1.6rem; }
+.contact-form { display: flex; flex-direction: column; width: min(100%, 700px); padding: 0 1rem;
+  gap: 1rem; }
+.contact-form label { align-self: flex-start; font-size: 1.7rem; font-weight: 600; }
+.contact-form input, .contact-form textarea { width: 100%; min-width: 0; padding: 1.3rem 1.6rem;
+  border-radius: 1rem; font-size: 1.7rem; color: white; background: #171717; border: 2px solid #ac3333; }
+.contact-form textarea { resize: vertical; }
+.contact-form .btn { align-self: center; min-height: 44px; cursor: pointer; }
+.form-note { color: #f0dada; font-size: 1.55rem; line-height: 1.6; text-align: left; }
+#form-status { min-height: 2.3rem; font-size: 1.5rem; line-height: 1.5; color: white; }
+.contact-alternatives a { color: white; text-decoration: underline; }
+@media (max-width: 991px) {
+  .home { gap: 3rem; }
+  .home-img { flex: 0 1 auto; }
+  .services-container { grid-template-columns: repeat(2,minmax(0,1fr)); margin: 0; }
+  .wrapper { grid-template-columns: 1fr; }
+}
+@media (max-width: 896px) {
+  .menu-toggle { display: inline-flex; }
+  .navbar { width: min(85vw,360px); max-height: calc(100dvh - 8rem); overflow-y: auto; }
+  .home { margin: 0; gap: 3rem; }
+  .home-content { flex: 1 1 auto; width: 100%; }
+  .home-content h1, .home-content h3, .home-content p, .social-icons, .btn-group {
+    position: static; top: auto; }
+  .home-content h1 { font-size: clamp(4rem,7vw,6.5rem); padding-top: 0; margin-top: 2rem; }
+  .home-img img { width: min(62vw,330px); margin-top: 0; top: auto; }
+  .services-container { grid-template-columns: 1fr; }
+}
+@media (max-width: 575px) {
+  .header { padding: 1.5rem 5%; }
+  section { padding: 10rem 5% 5rem; }
+  .home-content h1 { font-size: clamp(3.7rem,10vw,5rem); margin-bottom: 2rem; }
+  .home-content h3 { font-size: clamp(2.2rem,6vw,3rem); }
+  .text-animation span { font-size: inherit; margin-bottom: 0; }
+  .home-content p { font-size: 1.7rem; line-height: 1.65; }
+  .flashback-item { padding: 2.4rem; }
+  .flashback-item h3 { font-size: 2.7rem; }
+  .service-box .service-info { padding: 2.5rem; }
+  .service-info h3 { font-size: 2.5rem; }
+  .service-info p { font-size: 1.65rem; line-height: 1.5; }
+  .contact-form input, .contact-form textarea { font-size: 1.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important; transition-duration: .01ms !important;
+    scroll-behavior: auto !important; }
+}
