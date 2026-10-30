@@ -1,4 +1,21 @@
 /* Decorative depth layer. Content, palette and section order remain unchanged. */
+.theme-cursor{position:fixed;left:0;top:0;pointer-events:none;z-index:10000;opacity:0;transition:opacity .15s}
+.theme-cursor.is-visible{opacity:1}.cursor-dot,.cursor-ring{position:absolute;left:0;top:0;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cursor-dot{width:6px;height:6px;background:var(--main-color);box-shadow:0 0 10px var(--main-color)}
+.cursor-ring{width:30px;height:30px;border:1px solid var(--main-color);box-shadow:0 0 12px color-mix(in srgb,var(--main-color) 20%,transparent);transition:width .18s,height .18s,background-color .18s}
+.theme-cursor.is-link .cursor-ring{width:44px;height:44px;background:color-mix(in srgb,var(--main-color) 13%,transparent)}
+.click-wave{position:fixed;width:16px;height:16px;border:2px solid var(--main-color);border-radius:50%;pointer-events:none;z-index:9999;animation:click-wave .55s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes click-wave{from{transform:translate(-50%,-50%) scale(.3);opacity:.9}to{transform:translate(-50%,-50%) scale(4.5);opacity:0}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){body.custom-pointer,body.custom-pointer :is(a,button,[role="button"],.btn){cursor:none}}
+@media(hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.theme-cursor,.click-wave{display:none}}
+.depth-section{position:relative;isolation:isolate;overflow:clip}
+.depth-section>.depth-scene{opacity:.95}
+.depth-orbits{position:absolute;inset:-27%;z-index:-1;pointer-events:none;transform-style:preserve-3d;perspective:900px}
+.depth-orbits span{position:absolute;inset:calc(var(--ring)*3%);border:1px solid var(--main-color);border-radius:50%;transform:rotateX(calc(35deg + var(--ring)*22deg)) rotateY(calc(var(--ring)*32deg));animation:satellite-spin calc(17s + var(--ring)*4s) linear infinite;box-shadow:0 0 12px color-mix(in srgb,var(--main-color) 30%,transparent)}
+.depth-orbits span::after{content:"";position:absolute;left:50%;top:-4px;width:7px;height:7px;border-radius:50%;background:var(--main-color);box-shadow:0 0 16px var(--main-color)}
+@keyframes satellite-spin{from{transform:rotateX(calc(35deg + var(--ring)*22deg)) rotateY(calc(var(--ring)*32deg)) rotateZ(0)}to{transform:rotateX(calc(35deg + var(--ring)*22deg)) rotateY(calc(var(--ring)*32deg)) rotateZ(360deg)}}
+@media(hover:hover) and (pointer:fine){.service-box.depth-card,.project-card.depth-card{box-shadow:8px 9px 0 color-mix(in srgb,var(--main-color) 30%,transparent),16px 18px 0 color-mix(in srgb,var(--main-color) 10%,transparent)}.depth-card.depth-active{--lift:-10px}.depth-card.depth-active :is(h2,h3,h4){transform:translateZ(45px)}.project-card.depth-card:hover{border-color:var(--main-color)}}
+@media(prefers-reduced-motion:reduce){.depth-orbits span{animation:none}.depth-section>.depth-scene{display:none}}
 .home{position:relative;isolation:isolate;overflow:clip}
 .depth-scene{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:.65}
 .home-img{position:relative;isolation:isolate;perspective:1200px;flex-shrink:0}
