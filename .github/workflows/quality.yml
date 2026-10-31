@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: '24'
       - name: Source checks
-        run: node --test tests/*.test.mjs
+        run: node --test tests/*.test.mjs tests/*.test.cjs
   browser:
     runs-on: ubuntu-latest
     timeout-minutes: 15
