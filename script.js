@@ -25,3 +25,18 @@ document.querySelector('#contact-form').addEventListener('submit', event => {
   const body = `Ad: ${data.get('name')}\nE-posta: ${data.get('email')}\nTelefon: ${data.get('phone')}\n\n${data.get('message')}`;
   location.href = `mailto:esmabayka374@gmail.com?subject=${encodeURIComponent(data.get('topic') || 'Portfolyo üzerinden iletişim')}&body=${encodeURIComponent(body)}`;
 });
+
+document.querySelectorAll('[data-certificate-filter]').forEach(button => {
+  button.addEventListener('click', () => {
+    const category = button.dataset.certificateFilter;
+    document.querySelectorAll('[data-certificate-filter]').forEach(item => {
+      item.setAttribute('aria-pressed', String(item === button));
+    });
+    let count = 0;
+    document.querySelectorAll('.certificate-entry').forEach(card => {
+      card.hidden = category !== 'all' && card.dataset.category !== category;
+      if (!card.hidden) count++;
+    });
+    document.querySelector('#certificate-count').textContent = `${count} belge gösteriliyor`;
+  });
+});
