@@ -5,21 +5,18 @@
   cursor.className='theme-cursor'; cursor.setAttribute('aria-hidden','true');
   cursor.innerHTML='<span class="cursor-dot"></span><span class="cursor-ring"></span>';
   document.body.append(cursor);
-  let cursorFrame=0, pointerX=0, pointerY=0;
-  function resetCursor(){document.body.classList.remove('custom-pointer');cursor.classList.remove('is-visible');cancelAnimationFrame(cursorFrame);}
+  function resetCursor(){document.body.classList.remove('custom-pointer');cursor.classList.remove('is-visible','is-link');}
   document.addEventListener('pointermove',event=>{
     if(!precise.matches||reduced.matches||event.pointerType==='touch'){resetCursor();return;}
     const editable=event.target.closest('input,textarea,select,[contenteditable="true"]');
+    cursor.style.transform=`translate3d(${event.clientX}px,${event.clientY}px,0)`;
     document.body.classList.toggle('custom-pointer',!editable);
     cursor.classList.toggle('is-visible',!editable);
     cursor.classList.toggle('is-link',!!event.target.closest('a,button,[role="button"]'));
-    pointerX=event.clientX;pointerY=event.clientY;
-    if(!cursorFrame)cursorFrame=requestAnimationFrame(()=>{
-      cursor.style.transform=`translate3d(${pointerX}px,${pointerY}px,0)`;cursorFrame=0;
-    });
   },{passive:true});
   document.documentElement.addEventListener('pointerleave',resetCursor);
   window.addEventListener('blur',resetCursor);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)resetCursor();});
   document.addEventListener('keydown',event=>{if(event.key==='Tab')resetCursor();});
   reduced.addEventListener('change',resetCursor);precise.addEventListener('change',resetCursor);
   document.addEventListener('pointerdown',event=>{
@@ -30,7 +27,7 @@
     document.body.append(wave);wave.addEventListener('animationend',()=>wave.remove(),{once:true});
     setTimeout(()=>wave.remove(),750);
   },{passive:true});
-  const cards = [...document.querySelectorAll('.service-box,.project-card,.timeline-content,.home-img')];
+  const cards = [...document.querySelectorAll('.service-box,.project-card,.timeline-content,.home-img,.credential-card,.experience-card')];
   for (const card of cards) {
     card.classList.add('depth-card');
     let frame = 0;
