@@ -4,7 +4,7 @@
   "version": "1.2.0",
   "description": "Original visual portfolio with accessibility and browser testing",
   "scripts": {
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test tests/*.test.mjs tests/*.test.cjs",
     "test:e2e": "playwright test",
     "test:all": "npm test && npm run test:e2e"
   },
