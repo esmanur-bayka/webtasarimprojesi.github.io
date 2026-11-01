@@ -758,3 +758,20 @@ input[type="number"] {
 .service-box:hover .service-info p,
 .service-box:active .service-info h3,
 .service-box:active .service-info p{color:#111}
+.home-content .home-intro{max-width:62ch;font-size:2rem;line-height:1.7;text-wrap:pretty}
+.home-content h1{text-wrap:balance}
+.text-animation .role-visual>span::before{color:#ff7777}
+@media(max-width:896px){
+  .home{min-height:auto;gap:2.5rem;margin:4rem 2rem}
+  .home-img img{width:clamp(22rem,40vw,34rem);max-width:100%;height:auto;margin-top:2rem;top:0}
+  .home-content{width:100%;max-width:70rem}
+  .home-content h1{font-size:clamp(4.5rem,6.2vw,6.4rem);line-height:1.1;margin-top:0;padding-top:0;top:0}
+  .home-content .text-animation{font-size:2.4rem;top:0;margin-block:1.2rem}
+}
+@media(max-width:575px){
+  .home{gap:1.5rem;margin:2rem 0}
+  .home-img img{width:clamp(18rem,62vw,25rem);margin-top:1rem}
+  .home-content h1{font-size:clamp(3.6rem,9.5vw,4.8rem);margin-bottom:0}
+  .home-content .home-intro{max-width:42ch}
+  .home-content .text-animation{margin-block:1rem}
+}

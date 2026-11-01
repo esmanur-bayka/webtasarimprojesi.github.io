@@ -8,6 +8,19 @@ for(const width of [360,390,575,768,896,1024,1280]){
   await expect(page.locator('.publication-list a')).toHaveCount(7);
  });
 }
+test('homepage hero stays balanced across mobile and tablet widths',async({page})=>{
+ for(const width of [360,390,575,768,896]){
+  await page.setViewportSize({width,height:900});await page.goto('/');
+  const hero=page.locator('#home'),image=hero.locator('.home-img img'),intro=hero.locator('.home-intro');
+  await expect(hero.getByRole('heading',{level:1})).toBeVisible();
+  expect(await image.evaluate(element=>element.getBoundingClientRect().width)).toBeLessThanOrEqual(Math.min(width*.65,320));
+  expect(await hero.getByRole('heading',{level:1}).evaluate(element=>parseFloat(getComputedStyle(element).fontSize))).toBeLessThanOrEqual(56);
+  expect(await intro.evaluate(element=>parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(16);
+  expect(await hero.evaluate(element=>element.getBoundingClientRect().height)).toBeLessThan(1200);
+  await expect(hero.getByRole('link',{name:'CV’mi incele'})).toBeVisible();
+  await expect(hero.getByRole('link',{name:'İletişime geç'})).toBeVisible();
+ }
+});
 test('mobile navigation opens with keyboard and closes with Escape',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.goto('/');
  const menu=page.locator('#menu-icon');await menu.focus();await page.keyboard.press('Enter');
