@@ -25,6 +25,20 @@ test('certificate filters preserve document links',async({page})=>{
  const pdf=await page.request.get('/certificates/b2-ingilizce.pdf');expect(pdf.status()).toBe(200);
 });
 
+test('technology cards keep their text readable when hovered or clicked',async({page})=>{
+ await page.goto('/#services');
+ const card=page.locator('.service-box').first();
+ await card.hover();
+ await expect(card).toHaveCSS('background-color','rgb(255, 255, 255)');
+ await expect(card.locator('h3')).toHaveCSS('color','rgb(17, 17, 17)');
+ for(const paragraph of await card.locator('p').all()){
+  await expect(paragraph).toHaveCSS('color','rgb(17, 17, 17)');
+ }
+ await page.mouse.down();
+ await expect(card.locator('p').last()).toHaveCSS('color','rgb(17, 17, 17)');
+ await page.mouse.up();
+});
+
 test('CV content, responsive layout and print action are available',async({page})=>{
  await page.setViewportSize({width:360,height:800});
  await page.addInitScript(()=>{window.print=()=>{window.printWasCalled=true}});
