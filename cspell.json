@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "import": ["@cspell/dict-tr-tr/cspell-ext.json"],
+  "language": "en,tr,tr-TR",
+  "dictionaries": ["tr-tr"],
+  "words": [
+    "Esmanur",
+    "Bayka",
+    "Havadis",
+    "Havadis’teki",
+    "siber",
+    "zekâ",
+    "Kriptografi",
+    "Wazuh",
+    "Ozzacademy",
+    "Youthall",
+    "Humanspire",
+    "öğeleri",
+    "saklıdır",
+    "XAMPP",
+    "nums",
+    "contenteditable",
+    "EDUCATİON",
+    "SERVİCES",
+    "QUERİEs",
+    "QUERİES",
+    "webtasarimprojesi"
+  ]
+}
