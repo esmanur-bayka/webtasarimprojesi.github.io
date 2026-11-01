@@ -5,21 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Esmanur Bayka | Web Geliştirme Portfolyosu</title>
     <meta name="description" content="Esmanur Bayka, Web Tasarımı ve Kodlama 2. sınıf öğrencisi. Web projeleri, React öğrenme çalışmaları ve iletişim.">
+    <link rel="canonical" href="https://esmanur-bayka.github.io/webtasarimprojesi.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:title" content="Esmanur Bayka | Web Geliştirme Portfolyosu" />
+    <meta property="og:description" content="Web projelerim, gönüllü haber yazarlığım ve sertifikalarım." />
+    <meta property="og:url" content="https://esmanur-bayka.github.io/webtasarimprojesi.github.io/" />
+    <meta property="og:image" content="https://esmanur-bayka.github.io/webtasarimprojesi.github.io/img/ChatGPT%20Image%2011%20Kas%202025%2017_42_28.png" />
+    <meta property="og:image:alt" content="Esmanur Bayka E ve kod amblemi" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Esmanur Bayka", "url": "https://esmanur-bayka.github.io/webtasarimprojesi.github.io/", "sameAs": ["https://github.com/esmanur-bayka"], "description": "Web Tasarımı ve Kodlama öğrencisi; gönüllü teknoloji haber yazarı."}</script>
     <link rel="shortcut icon" href="img/icons8-e-96.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="effects.css?v=certificates-news-2" />
+    <link rel="stylesheet" href="style.css?v=a11y-1" />
+    <link rel="stylesheet" href="effects.css?v=a11y-1" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Ana içeriğe geç</a>
     <!-- HEADER START -->
     <header class="header">
       <a href="#home" class="logo">Esmanur <span>Bayka</span></a>
       <button class="bx bx-menu" id="menu-icon" type="button" aria-label="Menüyü aç" aria-controls="navbar" aria-expanded="false"></button>
-      <nav class="navbar" id="navbar">
-        <a href="#home" class="active">Anasayfa</a>
+      <nav class="navbar" id="navbar" aria-label="Ana gezinme">
+        <a href="#home" class="active" aria-current="location">Anasayfa</a>
         <a href="#experience">Deneyim</a>
         <a href="#certificates">Sertifikalar</a>
         <a href="#education">Benim Yolculuğum</a>
@@ -28,20 +39,21 @@
       </nav>
     </header>
     <!-- HEADER END   -->
+    <main id="main-content" tabindex="-1">
     <!-- HOME START   -->
     <section class="home" id="home">
       <div class="home-content">
         <h1>Merhaba, ben Esmanur</h1>
-        <h3 class="text-animation">Ben <span></span></h3>
+        <p class="text-animation"><span class="sr-only">Web Tasarımı ve Kodlama öğrencisiyim.</span><span class="role-visual" aria-hidden="true">Ben <span></span></span></p>
         <p>Atatürk Üniversitesi Web Tasarımı ve Kodlama 2. sınıf öğrencisiyim. HTML, CSS ve JavaScript ile arayüzler geliştiriyor, React öğrenme projeleri üzerinde çalışıyorum. Web ve mobil geliştirme alanında deneyim kazanmak istiyorum.</p>
         <div class="social-icons">
           <a
             href="https://www.instagram.com/lynapgrl?igsh=emNrMDAyZDlqNWJ2&utm_source=qr"
             target="_blank" rel="noopener noreferrer" aria-label="Instagram profilim"
-            ><i class="bx bxl-instagram"></i
+            ><i class="bx bxl-instagram" aria-hidden="true"></i
           ></a>
           <a href="https://wa.me/+905467710162" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişim"
-            ><i class="bx bxl-whatsapp"></i
+            ><i class="bx bxl-whatsapp" aria-hidden="true"></i
           ></a>
           <a href="https://github.com/esmanur-bayka" aria-label="GitHub profilim"><i class="bx bxl-github" aria-hidden="true"></i></a>
           <a href="mailto:esmabayka374@gmail.com" aria-label="E-posta gönder"><i class="bx bx-envelope" aria-hidden="true"></i></a>
@@ -201,22 +213,22 @@
       <div class="services-container">
         <div class="service-box">
           <div class="service-info">
-            <h4>Web arayüzleri</h4><p>HTML, CSS ve JavaScript ile responsive sayfalar geliştiriyorum. Tasarımı farklı ekranlarda kullanılabilir hâle getirmeye odaklanıyorum.</p>
+            <h3>Web arayüzleri</h3><p>HTML, CSS ve JavaScript ile responsive sayfalar geliştiriyorum. Tasarımı farklı ekranlarda kullanılabilir hâle getirmeye odaklanıyorum.</p>
           </div>
         </div>
         <div class="service-box">
           <div class="service-info">
-            <h4>Veri ve sunucu temelleri</h4><p>PHP ve SQL temellerini öğreniyorum. Veri saklama ve sunucu tarafı geliştirme konularında alıştırmalar yapıyorum.</p>
+            <h3>Veri ve sunucu temelleri</h3><p>PHP ve SQL temellerini öğreniyorum. Veri saklama ve sunucu tarafı geliştirme konularında alıştırmalar yapıyorum.</p>
           </div>
         </div>
         <div class="service-box">
           <div class="service-info">
-            <h4>React öğrenme çalışmaları</h4><p>FocusBoard üzerinde bileşenler, state yönetimi ve otomatik testlerle çalışıyorum. Öğrendiklerimi küçük uygulamalarla pekiştiriyorum.</p>
+            <h3>React öğrenme çalışmaları</h3><p>FocusBoard üzerinde bileşenler, state yönetimi ve otomatik testlerle çalışıyorum. Öğrendiklerimi küçük uygulamalarla pekiştiriyorum.</p>
           </div>
         </div>
         <div class="service-box">
           <div class="service-info">
-            <h4>Mobil geliştirme hedefim</h4><p>Mobil arayüzlere ilgi duyuyorum. Responsive web deneyimimin üzerine React Native ve Expo öğrenmeyi hedefliyorum; yayımlanmış bir mobil uygulamam bulunmuyor.</p>
+            <h3>Mobil geliştirme hedefim</h3><p>Mobil arayüzlere ilgi duyuyorum. Responsive web deneyimimin üzerine React Native ve Expo öğrenmeyi hedefliyorum; yayımlanmış bir mobil uygulamam bulunmuyor.</p>
           </div>
         </div>
       </div>
@@ -249,16 +261,17 @@
       </form>
     </section>
     <!-- CONTACT END -->
+    </main>
     <!--FOOTER START -->
     <footer class="footer">
       <div class="social">
         <a
           href="https://www.instagram.com/lynapgrl?igsh=emNrMDAyZDlqNWJ2&utm_source=qr"
-          target="_blank" rel="noopener noreferrer"
-          ><i class="bx bxl-instagram"></i
+          target="_blank" rel="noopener noreferrer" aria-label="Instagram profilim"
+          ><i class="bx bxl-instagram" aria-hidden="true"></i
         ></a>
         <a href="https://wa.me/+905467710162" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişim"
-          ><i class="bx bxl-whatsapp"></i
+          ><i class="bx bxl-whatsapp" aria-hidden="true"></i
         ></a>
         <a href="https://github.com/esmanur-bayka" aria-label="GitHub profilim"><i class="bx bxl-github" aria-hidden="true"></i></a>
         <a href="mailto:esmabayka374@gmail.com" aria-label="E-posta gönder"><i class="bx bx-envelope" aria-hidden="true"></i></a>
@@ -275,7 +288,7 @@
       </p>
     </footer>
     <!--FOOTER END -->
-    <script src="script.js?v=certificates-1"></script>
+    <script src="script.js?v=a11y-1"></script>
     <script src="effects.js" defer></script>
   </body>
 </html>
