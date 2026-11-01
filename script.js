@@ -40,3 +40,30 @@ document.querySelectorAll('[data-certificate-filter]').forEach(button => {
     document.querySelector('#certificate-count').textContent = `${count} belge gösteriliyor`;
   });
 });
+
+// Match the navigation state to the section below the fixed header.
+const sectionLinks = [...document.querySelectorAll('.navbar a[href^="#"]')];
+const navigationSections = sectionLinks.map(link => document.querySelector(link.hash));
+let navigationFrame = 0;
+function updateCurrentSection() {
+  navigationFrame = 0;
+  const marker = document.querySelector('.header').getBoundingClientRect().bottom + 24;
+  let active = navigationSections[0];
+  for (const section of navigationSections) {
+    if (section.getBoundingClientRect().top <= marker) active = section;
+  }
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) active = navigationSections.at(-1);
+  for (const link of sectionLinks) {
+    const current = link.hash === `#${active.id}`;
+    link.classList.toggle('active', current);
+    if (current) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  }
+}
+function scheduleNavigationUpdate() {
+  if (!navigationFrame) navigationFrame = requestAnimationFrame(updateCurrentSection);
+}
+window.addEventListener('scroll', scheduleNavigationUpdate, {passive:true});
+window.addEventListener('resize', scheduleNavigationUpdate, {passive:true});
+window.addEventListener('hashchange', scheduleNavigationUpdate);
+updateCurrentSection();

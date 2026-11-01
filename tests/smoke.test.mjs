@@ -18,3 +18,12 @@ test('no empty navigation links and all anchors resolve',()=>{
  assert.doesNotMatch(html,/href="#"/);
  for(const [,id]of html.matchAll(/href="#([^"]+)"/g))assert.ok(html.includes(`id="${id}"`),id);
 });
+
+test('accessible landmarks, stable role text and truthful sharing metadata',()=>{
+ assert.match(html,/<main id="main-content" tabindex="-1">/);
+ assert.match(html,/class="skip-link" href="#main-content"/);
+ assert.match(html,/<span class="sr-only">Web Tasarımı ve Kodlama öğrencisiyim/);
+ assert.match(html,/rel="canonical" href="https:\/\/esmanur-bayka.github.io\/webtasarimprojesi.github.io\/"/);
+ const schema=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+ assert.equal(schema.name,'Esmanur Bayka');assert.equal(schema['@type'],'Person');
+});
