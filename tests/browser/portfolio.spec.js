@@ -16,12 +16,24 @@ test('mobile navigation opens with keyboard and closes with Escape',async({page}
 });
 test('certificate filters preserve document links',async({page})=>{
  await page.goto('/#certificates');
+ await expect(page.getByRole('status')).toHaveText('15 belge gösteriliyor');
  await page.getByRole('button',{name:'Etkinlik katılımları',exact:true}).click();
  await expect(page.getByRole('status')).toHaveText('5 belge gösteriliyor');
- await page.getByRole('button',{name:'Eğitim ve rozetler',exact:true}).click();
+ await page.getByRole('button',{name:'Eğitimler ve rozetler',exact:true}).click();
  await expect(page.getByRole('status')).toHaveText('10 belge gösteriliyor');
  await expect(page.locator('a[href="certificates/b2-ingilizce.pdf"]').first()).toBeVisible();
  const pdf=await page.request.get('/certificates/b2-ingilizce.pdf');expect(pdf.status()).toBe(200);
+});
+
+test('CV content, responsive layout and print action are available',async({page})=>{
+ await page.setViewportSize({width:360,height:800});
+ await page.addInitScript(()=>{window.print=()=>{window.printWasCalled=true}});
+ await page.goto('/cv.html');
+ await expect(page.getByRole('heading',{name:'Esmanur Bayka'})).toBeVisible();
+ await expect(page.getByText('Web Tasarımı ve Kodlama öğrencisi · 2. sınıf')).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+ await page.getByRole('button',{name:'Yazdır / PDF olarak kaydet'}).click();
+ expect(await page.evaluate(()=>window.printWasCalled)).toBe(true);
 });
 
 test('skip link reaches main and section navigation reports current location',async({page})=>{

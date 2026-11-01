@@ -23,8 +23,16 @@ document.querySelector('#contact-form').addEventListener('submit', event => {
   event.preventDefault();
   const data = new FormData(event.currentTarget);
   const body = `Ad: ${data.get('name')}\nE-posta: ${data.get('email')}\nTelefon: ${data.get('phone')}\n\n${data.get('message')}`;
-  location.href = `mailto:esmabayka374@gmail.com?subject=${encodeURIComponent(data.get('topic') || 'Portfolyo üzerinden iletişim')}&body=${encodeURIComponent(body)}`;
+  location.href = `mailto:esmabayka374@gmail.com?subject=${encodeURIComponent(data.get('topic') || 'Portföy üzerinden iletişim')}&body=${encodeURIComponent(body)}`;
 });
+
+const certificateEntries = [...document.querySelectorAll('.certificate-entry')];
+const certificateCount = document.querySelector('#certificate-count');
+function updateCertificateCount(category = 'all') {
+  const count = certificateEntries.filter(entry => category === 'all' || entry.dataset.category === category).length;
+  certificateCount.textContent = `${count} belge gösteriliyor`;
+}
+updateCertificateCount();
 
 document.querySelectorAll('[data-certificate-filter]').forEach(button => {
   button.addEventListener('click', () => {
@@ -32,12 +40,10 @@ document.querySelectorAll('[data-certificate-filter]').forEach(button => {
     document.querySelectorAll('[data-certificate-filter]').forEach(item => {
       item.setAttribute('aria-pressed', String(item === button));
     });
-    let count = 0;
-    document.querySelectorAll('.certificate-entry').forEach(card => {
+    certificateEntries.forEach(card => {
       card.hidden = category !== 'all' && card.dataset.category !== category;
-      if (!card.hidden) count++;
     });
-    document.querySelector('#certificate-count').textContent = `${count} belge gösteriliyor`;
+    updateCertificateCount(category);
   });
 });
 

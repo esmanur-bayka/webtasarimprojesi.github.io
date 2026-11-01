@@ -182,17 +182,19 @@ section {
   color: black;
 }
 .text-animation {
-  font-size: 34px;
+  font-size: 3.4rem;
   font-weight: 600;
-  min-width: 280px;
+  min-width: 0;
+  max-width: 100%;
 }
 .text-animation .role-visual > span {
   position: relative;
+  white-space: nowrap;
 }
 .text-animation .role-visual > span::before {
   content: "";
   color: var(--main-color);
-  animation: words 20s infinite;
+  animation: words 20s steps(1, end) infinite;
 }
 .text-animation .role-visual > span::after {
   content: "";
@@ -202,7 +204,7 @@ section {
   position: absolute;
   right: -8px;
   border-left: 3px solid var(--bg-color);
-  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+  animation: cursor 0.6s infinite, typing 20s steps(32) infinite;
 }
 @keyframes cursor {
   to {
@@ -210,51 +212,14 @@ section {
   }
 }
 @keyframes words {
-  0%,
-  20% {
-    content: "Web öğrencisiyim";
-  }
-  21%,
-  40% {
-    content: "Kodlamayı öğreniyorum";
-  }
-  41%,
-  60% {
-    content: "Arayüz geliştiriyorum";
-  }
-  61%,
-  80% {
-    content: "React öğreniyorum";
-  }
-  81%,
-  100% {
-    content: "Üreterek öğreniyorum";
-  }
+  0%, 25% { content: "Web arayüzleri geliştiriyorum"; }
+  25.01%, 50% { content: "React üzerine çalışıyorum"; }
+  50.01%, 75% { content: "Siber güvenliği takip ediyorum"; }
+  75.01%, 100% { content: "Teknoloji haberleri yazıyorum"; }
 }
 @keyframes typing {
-  10%,
-  15%,
-  30%,
-  35%,
-  50%,
-  55%,
-  70%,
-  75%,
-  90%,
-  95% {
-    width: 0;
-  }
-  5%,
-  20%,
-  25%,
-  40%,
-  45%,
-  60%,
-  65%,
-  80%,
-  85% {
-    width: calc(100% + 8px);
-  }
+  0%, 25%, 50%, 75%, 100% { width: 0; }
+  5%, 20%, 30%, 45%, 55%, 70%, 80%, 95% { width: calc(100% + 8px); }
 }
 /* HOME END */
 /* EDUCATİON START */
@@ -366,7 +331,7 @@ section {
 }
 .service-box {
   background-color: var(--main-color);
-  height: 300px;
+  min-height: 300px;
   border-radius: 3rem;
   border: 5px solid transparent;
   cursor: pointer;
@@ -382,7 +347,7 @@ section {
   display: flex;
   flex-direction: column;
   text-align: left;
-  max-height: 200px;
+  max-height: none;
   justify-content: left;
   align-items: baseline;
   padding: 5rem 5rem;
@@ -394,11 +359,10 @@ section {
 }
 .service-info p {
   font-size: 1.6rem;
-  font-weight: 100px;
-  max-height: 100px;
   line-height: 1.7;
-  margin: auto;
+  margin: 0;
 }
+.service-info .technology-source{font-size:1.35rem;font-weight:600;opacity:.85;margin:-.5rem 0 1.2rem}
 /* SERVİCES END */
 /* <!-- FLASHBACKS START --> */
 .flashbacks {
@@ -701,15 +665,15 @@ input[type="number"] {
   }
   .home-content h1 {
     font-size: 5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
   }
   .home-content .text-animation {
-    font-size: 3.5rem;
+    font-size: 2.2rem;
   }
   .text-animation .role-visual > span {
     display: block;
-    font-size: 2.8rem;
-    margin-bottom: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
   }
   .text-animation .role-visual > span::after {
     content: "";
@@ -719,7 +683,7 @@ input[type="number"] {
     position: absolute;
     border-left: 3px solid var(--bg-color);
     right: -8px;
-    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    animation: cursor 0.6s infinite, typing 20s steps(32) infinite;
   }
   .home-content p {
     font-size: 2rem;
@@ -771,7 +735,7 @@ input[type="number"] {
 .project-card{border:2px solid var(--main-color);border-radius:2rem;padding:3rem;background:var(--second-bg-color)}
 .project-card h3{font-size:2.8rem;margin-bottom:2rem}.project-card p{font-size:1.7rem;line-height:1.7;margin-bottom:2rem}
 @media(max-width:896px){.project-grid{grid-template-columns:1fr}.home-content h1,.home-content .text-animation,.home-content p,.social-icons,.btn-group{top:auto}.home-content h1{padding-top:0}.home-content .text-animation{margin-block:2rem}.home{gap:4rem}.navbar{max-height:80dvh;overflow:auto}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.text-animation .role-visual > span::before{content:'Web Tasarımı ve Kodlama öğrencisiyim'}.text-animation .role-visual > span::after{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.text-animation .role-visual > span::before{content:'Web arayüzleri geliştiriyorum'}.text-animation .role-visual > span::after{display:none}}
 
 /* Accessibility refinements; original palette and effects remain intact. */
 .skip-link{position:fixed;left:1.5rem;top:1.5rem;z-index:10000;padding:1.4rem 2rem;background:white;color:black;font-size:1.6rem;transform:translateY(-200%)}
@@ -785,3 +749,8 @@ input[type="number"] {
 .heading span,.logo span,.footer .copyright span,.navbar a:hover,.navbar a:active{color:var(--text-color)}
 .text-animation>.sr-only::before,.text-animation>.sr-only::after,.text-animation>.role-visual::before,.text-animation>.role-visual::after{content:none;animation:none}
 .text-animation>.role-visual{color:var(--text-color)}
+.home-content .home-role{font-size:2rem;line-height:1.5;margin:1.2rem 0 0;color:var(--text-color)}
+.home-content .home-intro{max-width:68ch}
+.project-links{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1.5rem}
+.project-technologies{font-weight:600}
+@media(max-width:575px){.home-content .home-role{font-size:1.8rem}.project-links{align-items:flex-start;flex-direction:column}.project-links .btn{max-width:100%;text-align:center}}

@@ -1,4 +1,4 @@
-# Esmanur Bayka — kişisel portfolyo
+# Esmanur Bayka — kişisel portföy
 
 Özgün siyah-kırmızı tasarım, görseller ve sayfa yapısı korunarak erişilebilirlik, güvenilir içerik ve kalite testleri iyileştirildi.
 
