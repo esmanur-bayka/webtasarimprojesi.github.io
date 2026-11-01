@@ -784,3 +784,4 @@ input[type="number"] {
 /* Keep the red border, glow and background; use readable light text. */
 .heading span,.logo span,.footer .copyright span,.navbar a:hover,.navbar a:active{color:var(--text-color)}
 .text-animation>.sr-only::before,.text-animation>.sr-only::after,.text-animation>.role-visual::before,.text-animation>.role-visual::after{content:none;animation:none}
+.text-animation>.role-visual{color:var(--text-color)}
