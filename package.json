@@ -9,6 +9,7 @@
     "test:all": "npm test && npm run test:e2e"
   },
   "devDependencies": {
+    "@cspell/dict-tr-tr": "3.0.8",
     "@playwright/test": "1.56.1"
   }
 }
